@@ -20,13 +20,15 @@ function addTodo(event) {
 	newTodo.classList.add('todo-item');
 	todoDiv.appendChild(newTodo);
 	// Check as completed button
-	const completedButton = document.createElement('button');
-	completedButton.innerHTML = '<i class="fas fas-check"></i>';
-	completedButton.classList.add("complete-btn");
+	const completeButton = document.createElement('button');
+	completeButton.innerHTML = '<i class="fas fa-check"></i>';
+	completeButton.classList.add("complete-btn");
 	todoDiv.appendChild(completeButton);
 	// Check delete button
 	const deletedButton = document.createElement('button');
-	deletedButton.innerHTML = '<i class="fas fas-check"></i>';
+	deletedButton.innerHTML = '<i class="far fa-trash-alt"></i>';
 	deletedButton.classList.add("complete-btn");
 	todoDiv.appendChild(deletedButton);
+	// Apend Todo div 
+	todoList.appendChild(todoDiv);
 }

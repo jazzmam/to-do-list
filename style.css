@@ -6,7 +6,7 @@
 
 body {
 	background-image: linear-gradient(90deg, #f72585, #4cc9f0);
-	color: #fff;
+
 	font-family: "Poppins", sans-serif;
 	min-height: 100vh;
 }
@@ -27,6 +27,10 @@ form {
 	align-items: center;
 }
 
+h1 {
+	color: #fff;
+}
+
 form input,
 form button {
 	padding: 0.5rem;
@@ -45,4 +49,23 @@ form button {
 form button:hover {
 	color: #fff;
 	background: #B5179E;
+}
+
+.todo-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.todo-list {
+	min-width: 30%;
+	list-style: none;
+}
+
+.todo {
+	margin: 0.5rem;
+	background: #fff;
+	display: flex;
+	/*justify-content: space-between;
+	align-items: center;*/
 }
