@@ -68,6 +68,7 @@ form button:hover {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	transition: 0.5s ease;
 }
 
 .todo-item {
@@ -94,4 +95,10 @@ form button:hover {
 .fa-check, 
 .fa-trash-alt {
 	pointer-events: none;
+}
+
+.completed {
+	text-decoration: line-through;
+	color: #999;
+	opacity: 0.5;
 }
