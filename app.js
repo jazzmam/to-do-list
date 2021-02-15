@@ -5,11 +5,11 @@ const todoList = document.querySelector('.todo-list');
 
 // Event Listeners
 document.addEventListener('DOMContentLoaded', getLocalStorageTodos);
-todoInput.addEventListener('input', enableInsertion);
+todoInput.addEventListener('input', enableSubmission);
 todoButton.addEventListener('click', addTodo);
 todoList.addEventListener('click', deleteCheckTodo);
 
-function enableInsertion() {
+function enableSubmission() {
 	todoButton.classList.add('enabled');
 }
 
@@ -17,6 +17,7 @@ function enableInsertion() {
 function addTodo(event) {
 	// Prevent form from submitting	
 	event.preventDefault();
+
 	// Todo div
 	const todoDiv = document.createElement('div');
 	todoDiv.classList.add('todo');
@@ -30,6 +31,9 @@ function addTodo(event) {
 		newTodo.classList.add('todo-item');
 		todoDiv.appendChild(newTodo);
 	}
+
+	// Remove enabled class from input button
+	todoButton.classList.remove('enabled');
 
 	// Save to local storage
 	saveLocalStorageTodos(todoInput.value);

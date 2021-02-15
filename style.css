@@ -43,7 +43,6 @@ form button {
 	color: #B5179E;
 	background: #fff;
 	opacity: 0.5;
-	cursor: not-allowed;
 	pointer-events: none;
 }
 
@@ -91,6 +90,14 @@ form button:hover {
 
 .complete-btn {
 	background: #B5179E;	
+}
+
+.complete-btn:hover {
+	background: #9c1688;	
+}
+
+.delete-btn:hover {
+	background: #976590;	
 }
 
 .fa-check, 
