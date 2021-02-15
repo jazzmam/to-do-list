@@ -42,8 +42,9 @@ form button {
 form button {
 	color: #B5179E;
 	background: #fff;
-	cursor: pointer;
-	transition: all 0.2s ease;
+	opacity: 0.5;
+	cursor: not-allowed;
+	pointer-events: none;
 }
 
 form button:hover {
@@ -101,4 +102,11 @@ form button:hover {
 	text-decoration: line-through;
 	color: #999;
 	opacity: 0.5;
+}
+
+.enabled {
+	opacity: 1;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	pointer-events: auto;
 }

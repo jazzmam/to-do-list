@@ -5,8 +5,13 @@ const todoList = document.querySelector('.todo-list');
 
 // Event Listeners
 document.addEventListener('DOMContentLoaded', getLocalStorageTodos);
+todoInput.addEventListener('input', enableInsertion);
 todoButton.addEventListener('click', addTodo);
 todoList.addEventListener('click', deleteCheckTodo);
+
+function enableInsertion() {
+	todoButton.classList.add('enabled');
+}
 
 // Functions
 function addTodo(event) {
@@ -17,9 +22,15 @@ function addTodo(event) {
 	todoDiv.classList.add('todo');
 	// li
 	const newTodo = document.createElement('li');
-	newTodo.innerText = todoInput.value;
-	newTodo.classList.add('todo-item');
-	todoDiv.appendChild(newTodo);
+
+	if (todoInput.value) {
+		console.log('has value');
+	
+		newTodo.innerText = todoInput.value;
+		newTodo.classList.add('todo-item');
+		todoDiv.appendChild(newTodo);
+	}
+
 	// Save to local storage
 	saveLocalStorageTodos(todoInput.value);
 	// Check as completed button
@@ -111,5 +122,8 @@ function removeLocalStorageTodos(todo) {
 		todos = JSON.parse(localStorage.getItem('todos'));
 	}
 
-	console.log(todo);
+	todoIndex = todo.children[0].innerText;
+	todos.splice(todos.indexOf(todoIndex), 1);
+
+	localStorage.setItem('todos', JSON.stringify(todos));
 }
